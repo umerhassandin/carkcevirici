@@ -1,0 +1,13 @@
+{
+  "title": "Karar Çarkı",
+  "theme": "okyanus",
+  "removeWinnerDefault": false,
+  "entries": [
+    "Yap",
+    "Yarın Yap",
+    "Vazgeç",
+    "Biraz Düşün",
+    "Hemen Başla",
+    "Başkasına Sor"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Öğrenci Seçme Çarkı",
+  "theme": "okyanus",
+  "removeWinnerDefault": true,
+  "entries": [
+    "Ahmet",
+    "Ayşe",
+    "Mehmet",
+    "Zeynep",
+    "Can",
+    "Elif",
+    "Burak",
+    "Deniz",
+    "Ece",
+    "Kerem"
+  ]
+}

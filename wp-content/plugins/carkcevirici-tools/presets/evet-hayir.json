@@ -1,0 +1,13 @@
+{
+  "title": "Evet Hayır Çarkı",
+  "theme": "klasik",
+  "removeWinnerDefault": false,
+  "entries": [
+    "Evet",
+    "Hayır",
+    "Evet",
+    "Hayır",
+    "Belki",
+    "Hayır"
+  ]
+}

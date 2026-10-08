@@ -1,0 +1,15 @@
+{
+  "title": "Rastgele Renk Çarkı",
+  "theme": "klasik",
+  "removeWinnerDefault": false,
+  "entries": [
+    { "text": "Kırmızı", "color": "#e53935" },
+    { "text": "Mavi", "color": "#1e88e5" },
+    { "text": "Sarı", "color": "#fdd835" },
+    { "text": "Yeşil", "color": "#43a047" },
+    { "text": "Turuncu", "color": "#fb8c00" },
+    { "text": "Mor", "color": "#8e24aa" },
+    { "text": "Pembe", "color": "#ec407a" },
+    { "text": "Turkuaz", "color": "#00acc1" }
+  ]
+}

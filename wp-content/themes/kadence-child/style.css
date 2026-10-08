@@ -1,0 +1,14 @@
+/*
+Theme Name:   Kadence Child (Çark Çevirici)
+Theme URI:    https://carkcevirici.com/
+Description:  Çark Çevirici için Kadence alt teması. Tüm özel şablon ve stil değişiklikleri burada tutulur; Kadence Pro çekirdek dosyaları asla değiştirilmez.
+Author:       Çark Çevirici
+Template:     kadence
+Version:      1.0.0
+Text Domain:  kadence-child
+*/
+
+/* Site-wide tweaks that are not part of the carkcevirici-tools plugin
+   (the plugin owns everything inside .cark-wheel / .cark-tool) go here. */
+
+.site-404 .cark-wheel { margin-top: 1.5rem; }

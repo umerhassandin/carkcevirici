@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cark/wheel",
+	"title": "Çark",
+	"category": "widgets",
+	"icon": "marker",
+	"description": "Dönen bir seçim çarkı ekler (hazır liste veya kendi seçeneklerin).",
+	"textdomain": "carkcevirici-tools",
+	"attributes": {
+		"preset": { "type": "string", "default": "" },
+		"entries": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"theme": { "type": "string", "default": "klasik" },
+		"removeWinner": { "type": "boolean", "default": false },
+		"winners": { "type": "number", "default": 1 },
+		"duration": { "type": "number", "default": 6 }
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"editorScript": "file:./index.js",
+	"render_callback": "Cark_Blocks::render"
+}

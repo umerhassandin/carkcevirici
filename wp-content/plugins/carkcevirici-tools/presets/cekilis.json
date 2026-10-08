@@ -1,0 +1,14 @@
+{
+  "title": "Çekiliş Çarkı",
+  "theme": "parti",
+  "removeWinnerDefault": true,
+  "winnersPerSpin": 1,
+  "entries": [
+    "Katılımcı 1",
+    "Katılımcı 2",
+    "Katılımcı 3",
+    "Katılımcı 4",
+    "Katılımcı 5",
+    "Katılımcı 6"
+  ]
+}
