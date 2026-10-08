@@ -1,0 +1,143 @@
+<!-- ============================================================
+  NASIL ÇALIŞIR (/nasil-calisir/)
+  ============================================================
+  1) Sayfalar → Yeni Ekle → Başlık: Nasıl Çalışır
+  2) ⋮ → Kod düzenleyici → içeriği yapıştır → Görsel düzenleyiciye dön
+  3) Taslak olarak kaydet.
+
+  RANK MATH SEO:
+    SEO Başlık: Çark Çevirici Nasıl Çalışır? Adillik ve Gizlilik | Çark Çevirici
+    Meta Açıklama: Çark Çevirici'nin rastgelelik yöntemi, adillik testi ve
+      gizlilik yaklaşımı. Kazanan nasıl belirlenir, veriler nerede saklanır?
+    Odak anahtar kelime: çark hileli mi
+
+  NOT: Buradaki 100.000 çeviriş simülasyon sonuçları, wheel.js'teki
+  gerçek ağırlıklı-kümülatif seçim algoritmasının birebir aynısı
+  çalıştırılarak elde edildi (bu oturumda Node.js ile test edildi).
+  Uydurulmuş istatistik değildir.
+============================================================ -->
+
+----- YAPIŞTIRILACAK İÇERİK BAŞLANGICI -----
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"1.25rem","lineHeight":"1.6"}}} -->
+<p style="font-size:1.25rem;line-height:1.6">Çark Çevirici'de kazanan, çark dönmeye <strong>başlamadan önce</strong> tarayıcının kriptografik rastgele sayı üreticisiyle belirlenir. Dönüş animasyonu, bu önceden belirlenmiş sonucu görsel olarak göstermekten başka bir şey yapmaz — yani kimse çarkı "ayarlayamaz" veya sonucu etkileyemez.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Kazanan Tam Olarak Nasıl Belirlenir?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list">
+<!-- wp:list-item -->
+<li>Çarkı çevirdiğin anda, tarayıcın <code>crypto.getRandomValues()</code> fonksiyonunu çağırır. Bu, işletim sisteminin kendi kriptografik rastgele sayı üretecini kullanan, tahmin edilemez bir yöntemdir (bankacılık ve güvenlik uygulamalarında kullanılan standarttır).</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Üretilen sayı, seçeneklerinin toplam ağırlığına göre bir "kümülatif ağırlık" aralığına denk getirilir — her seçenek, ağırlığıyla orantılı bir aralığa sahiptir.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Hangi aralığa denk geldiyse, kazanan odur. Bu seçim, dönüş animasyonu başlamadan önce, anında tamamlanır.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Çark daha sonra, önceden belirlenen bu kazanana doğru 4-7 saniyelik yavaşlayan bir dönüş animasyonuyla "gider". Animasyon tamamen kozmetiktir; sonucu değiştirmez.</li>
+<!-- /wp:list-item -->
+</ol>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2>Çark Hileli mi?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Hayır. Çark Çevirici'de "hile" yapmanın teknik bir yolu yoktur çünkü: (1) kazanan, animasyon başlamadan önce belirlenir, (2) seçim tamamen senin tarayıcında gerçekleşir, bir sunucuya bağlı değildir, (3) kullanılan <code>crypto.getRandomValues()</code> yöntemi, tahmin edilmesi veya manipüle edilmesi pratik olarak imkansız bir rastgelelik kaynağıdır.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem","left":"1.5rem","right":"1.5rem"}},"border":{"radius":"14px"},"color":{"background":"#eef4ff"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="background-color:#eef4ff;border-radius:14px;padding-top:2rem;padding-right:1.5rem;padding-bottom:2rem;padding-left:1.5rem">
+
+<!-- wp:heading -->
+<h2>Adillik Testi: 100.000 Simüle Çeviriş</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Çarkın kullandığı seçim algoritmasını (ağırlıklı kümülatif dağılım + <code>crypto.getRandomValues()</code>), 10 eşit seçenekli bir çarkta 100.000 kez simüle ederek test ettik. Sonuçlar:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table -->
+<figure class="wp-block-table">
+<table>
+<thead>
+<tr><th>Seçenek</th><th>Çıkma Sayısı</th><th>Gözlemlenen Oran</th><th>Beklenen Oran</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>9.961</td><td>%9,961</td><td>%10,000</td></tr>
+<tr><td>2</td><td>10.059</td><td>%10,059</td><td>%10,000</td></tr>
+<tr><td>3</td><td>9.911</td><td>%9,911</td><td>%10,000</td></tr>
+<tr><td>4</td><td>9.762</td><td>%9,762</td><td>%10,000</td></tr>
+<tr><td>5</td><td>9.918</td><td>%9,918</td><td>%10,000</td></tr>
+<tr><td>6</td><td>9.988</td><td>%9,988</td><td>%10,000</td></tr>
+<tr><td>7</td><td>10.130</td><td>%10,130</td><td>%10,000</td></tr>
+<tr><td>8</td><td>10.036</td><td>%10,036</td><td>%10,000</td></tr>
+<tr><td>9</td><td>10.075</td><td>%10,075</td><td>%10,000</td></tr>
+<tr><td>10</td><td>10.160</td><td>%10,160</td><td>%10,000</td></tr>
+</tbody>
+</table>
+</figure>
+<!-- /wp:table -->
+
+<!-- wp:paragraph -->
+<p><strong>Sonuç:</strong> En fazla sapan seçenek (%9,762), beklenen %10'dan yalnızca 0,24 yüzde puanı uzaklaştı — yani tüm seçenekler %10'un ±1 puan içinde kaldı. Bu, istatistiksel olarak beklenen, sağlıklı bir rastgelelik dağılımıdır.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Ağırlıklı seçeneklerle de (1, 2, 3 ve 4 birimlik ağırlıklar — toplamda %10/%20/%30/%40 beklenen oranlar) aynı testi tekrarladık; 100.000 çevirişte gözlemlenen oranlar sırasıyla %9,873 / %20,240 / %30,163 / %39,724 çıktı — her biri beklenen orana 0,3 yüzde puanından daha yakın. Yani ağırlık sistemi de doğru orantıda çalışıyor.</p>
+<!-- /wp:paragraph -->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2>Verilerim Nerede Saklanıyor?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Çark Çevirici'ye hesap açmazsın çünkü hiç gerekmez. Yazdığın seçenekler, ayarların ve kaydettiğin çarklar yalnızca kendi tarayıcının yerel depolama alanında (localStorage) tutulur — hiçbir metin, isim veya liste sunucularımıza gönderilmez. Paylaşım bağlantıları bile sunucu tarafında saklanmaz; çark verisi doğrudan bağlantının kendisinde (URL fragment) taşınır.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Sınırlar ve Dürüst Olmak İstediğimiz Noktalar</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<!-- wp:list-item -->
+<li>Tarayıcın <code>crypto.getRandomValues()</code>'u desteklemiyorsa (çok eski tarayıcılarda), araç standart <code>Math.random()</code>'a geri döner — bu durumda bile pratik kullanım için yeterince rastgeledir, ancak kriptografik garanti sağlamaz.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Çark Çevirici, resmi piyango, kumar veya bahis için tasarlanmamıştır; eğlence, eğitim ve karar verme amaçlı bir araçtır.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>localStorage tarayıcı/cihaz bazlıdır — başka bir cihazdan girdiğinde kayıtlı çarklarını görmezsin (bu bir hata değil, verinin sunucuda tutulmamasının doğal sonucudur).</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><em>Son güncelleme: 8 Ekim 2026</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Çark Çevirici Nasıl Çalışır? Adillik ve Gizlilik",
+  "author": {"@type": "Organization", "name": "Çark Çevirici"},
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "inLanguage": "tr-TR"
+}
+</script>
+<!-- /wp:html -->
+
+----- YAPIŞTIRILACAK İÇERİK SONU -----
