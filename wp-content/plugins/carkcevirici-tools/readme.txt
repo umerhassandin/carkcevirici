@@ -4,7 +4,7 @@ Tags: wheel, spinner, random, draw, turkish
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ Tüm JavaScript vanilla ES2020'dir; jQuery, React veya harici CDN kullanılmaz. 
 4. Bir sayfaya `[cark preset="anasayfa"]` kısa kodunu ekle ya da Çark bloğunu kullan.
 
 == Changelog ==
+
+= 1.1.0 =
+* `[iletisim_formu]` kısa kodu eklendi: honeypot korumalı, e-posta ile iletişim formu (harici form eklentisi gerektirmez).
 
 = 1.0.0 =
 * İlk sürüm: çark motoru, 5 ek araç, hazır liste sistemi, embed ve llms.txt uç noktaları.
