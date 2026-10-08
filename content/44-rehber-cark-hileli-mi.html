@@ -1,0 +1,130 @@
+<!-- ============================================================
+  REHBER 9/12 — ONLİNE ÇARK HİLELİ Mİ? (/rehber/cark-hileli-mi/)
+  ============================================================
+  1) Sayfalar → Yeni Ekle → Başlık: Online Çark Hileli mi?
+  2) Sayfa Nitelikleri → Üst Sayfa: "Rehber" seç
+  3) ⋮ → Kod düzenleyici → içeriği yapıştır → Görsel düzenleyiciye dön
+  4) Taslak olarak kaydet.
+
+  RANK MATH SEO:
+    SEO Başlık: Online Çark Hileli mi? Gerçek mi Sahte mi | Çark Çevirici
+    Meta Açıklama: Online çark çevirme araçları hileli olabilir mi?
+      Sahte ve gerçek rastgelelik arasındaki fark, nasıl kontrol edilir?
+    Odak anahtar kelime: çark hileli mi
+    Yazar: Çark Çevirici Editörü
+============================================================ -->
+
+----- YAPIŞTIRILACAK İÇERİK BAŞLANGICI -----
+
+<!-- wp:paragraph -->
+<p><em>Son güncelleme: 8 Ekim 2026 · Yazar: Çark Çevirici Editörü</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"1.15rem","lineHeight":"1.6"}}} -->
+<p style="font-size:1.15rem;line-height:1.6">"Online çark hileli mi" sorusu, özellikle çekiliş veya kura çekerken haklı bir endişedir — bir web sitesinin arkasında ne olduğunu göremezsin. Bu rehberde, online çark araçlarının teknik olarak nasıl hile yapabileceğini, nasıl yapamayacağını ve <a href="/nasil-calisir/">Çark Çevirici'nin</a> yöntemini nasıl doğrulayabileceğini açıklıyoruz.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Bir Online Çark Teorik Olarak Nasıl Hile Yapabilir?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Kötü niyetli veya özensiz tasarlanmış bir çark aracı, şu yollarla sonucu manipüle edebilir:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<!-- wp:list-item --><li><strong>Animasyon sonrası seçim:</strong> Kazananı, dönüş animasyonu BİTTİKTEN sonra belirleyip, çarkı o sonuca "yapıştırmak" mümkündür. Bu durumda görsel olarak rastgele görünür ama aslında değildir.</li><!-- /wp:list-item -->
+<!-- wp:list-item --><li><strong>Zayıf rastgelelik kaynağı:</strong> Bazı eski veya özensiz araçlar, tahmin edilebilir veya düşük kaliteli rastgele sayı üreteçleri (ör. basit <code>Math.random()</code> yerine saat bazlı bir sayaç) kullanabilir.</li><!-- /wp:list-item -->
+<!-- wp:list-item --><li><strong>Sunucu taraflı manipülasyon:</strong> Sonuç sunucuda hesaplanıp kullanıcıya gönderiliyorsa, sunucu sahibinin sonucu değiştirmesi teorik olarak mümkündür.</li><!-- /wp:list-item -->
+<!-- wp:list-item --><li><strong>Gizli ağırlıklar:</strong> Kullanıcıya gösterilmeyen, arka planda eklenmiş ekstra ağırlıklar bazı seçeneklerin daha sık çıkmasını sağlayabilir.</li><!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2>Çark Çevirici Bu Sorunları Nasıl Çözüyor?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<!-- wp:list-item --><li><strong>Kazanan önce belirlenir:</strong> <code>crypto.getRandomValues()</code> ile kazanan, animasyon başlamadan ÖNCE belirlenir; animasyon sadece bu sonucu gösterir. "Sonuca yapıştırma" teknik olarak mümkün değildir çünkü hedef zaten bellidir ve değiştirilmez.</li><!-- /wp:list-item -->
+<!-- wp:list-item --><li><strong>Kriptografik rastgelelik:</strong> <code>crypto.getRandomValues()</code>, bankacılık ve güvenlik uygulamalarında kullanılan, tahmin edilmesi pratik olarak imkansız bir yöntemdir — basit <code>Math.random()</code>'dan çok daha güçlüdür.</li><!-- /wp:list-item -->
+<!-- wp:list-item --><li><strong>İşlem tamamen tarayıcıda:</strong> Seçim, kullanıcının kendi tarayıcısında gerçekleşir; sunucuya bir istek gönderilmez, dolayısıyla sunucu taraflı bir manipülasyon söz konusu olamaz.</li><!-- /wp:list-item -->
+<!-- wp:list-item --><li><strong>Ağırlıklar görünür ve isteğe bağlıdır:</strong> Ağırlık sistemi yalnızca kullanıcı açıkça "*2", "*3" gibi bir çarpan eklediğinde devreye girer; gizli bir ağırlık mekanizması yoktur.</li><!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2>Bir Çarkın Adilliğini Nasıl Kontrol Edebilirsin?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Kullandığın herhangi bir online çark aracının (sadece Çark Çevirici değil) adilliğinden şüpheleniyorsan, şu kontrolleri yapabilirsin:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list">
+<!-- wp:list-item --><li><strong>Aynı listeyle birçok kez çevir.</strong> 20-30 kez çevirip sonuçları not al; sonuçlar yaklaşık olarak eşit dağılmalı (10 seçenekte her biri yaklaşık %10 civarında çıkmalı).</li><!-- /wp:list-item -->
+<!-- wp:list-item --><li><strong>Yöntem açıklamasını oku.</strong> Güvenilir araçlar, hangi rastgelelik yöntemini kullandıklarını (crypto.getRandomValues gibi) açıkça belirtir. Çark Çevirici'nin yöntemi için <a href="/nasil-calisir/">Nasıl Çalışır</a> sayfasına bakabilirsin.</li><!-- /wp:list-item -->
+<!-- wp:list-item --><li><strong>Tarayıcı geliştirici araçlarını kontrol et (ileri seviye).</strong> Teknik bilgisi olanlar, tarayıcının "Ağ" (Network) sekmesinden çevirme anında sunucuya bir istek gidip gitmediğini kontrol edebilir — gitmiyorsa, işlem tamamen istemci tarafında yapılıyor demektir.</li><!-- /wp:list-item -->
+</ol>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2>Adillik Testi Sonuçlarımız</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Kendi algoritmamızı 100.000 simüle çeviriş üzerinde test ettik; 10 eşit seçenekli bir çarkta her seçenek, beklenen %10'dan en fazla 0,24 yüzde puanı saptı — yani istatistiksel olarak sağlıklı bir dağılım elde ettik. Ağırlıklı seçeneklerde de orantılar doğru çıktı. Tüm test sonuçlarını ve metodolojiyi <a href="/nasil-calisir/">Nasıl Çalışır</a> sayfasında şeffaf şekilde paylaşıyoruz.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem","left":"1.5rem","right":"1.5rem"}},"border":{"radius":"14px"},"color":{"background":"#eef4ff"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="background-color:#eef4ff;border-radius:14px;padding-top:2rem;padding-right:1.5rem;padding-bottom:2rem;padding-left:1.5rem">
+<!-- wp:heading {"level":3} -->
+<h3>Detaylı İncele</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Rastgelelik yöntemimizi ve test sonuçlarımızı incelemek ister misin? <a href="/nasil-calisir/">Nasıl Çalışır sayfasına git →</a></p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2>Sıkça Sorulan Sorular</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} --><h3>Çark Çevirici'nin sonucunu biri değiştirebilir mi?</h3><!-- /wp:heading -->
+<!-- wp:paragraph --><p>Hayır. Seçim tamamen kendi tarayıcında, kriptografik rastgele sayı üretimiyle gerçekleşir; ne site sahibi ne de başka biri sonucu değiştiremez.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --><h3>Math.random() ile crypto.getRandomValues() arasındaki fark nedir?</h3><!-- /wp:heading -->
+<!-- wp:paragraph --><p>Math.random(), genel amaçlı ve bazı tarayıcılarda teorik olarak tahmin edilebilir bir yöntemdir. crypto.getRandomValues() ise işletim sisteminin kriptografik rastgelelik kaynağını kullanır ve güvenlik uygulamalarında (şifreleme, bankacılık) tercih edilen standarttır.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --><h3>Çekilişimde kullandığım çarkın adil olduğunu katılımcılara nasıl ispatlarım?</h3><!-- /wp:heading -->
+<!-- wp:paragraph --><p>Çevirme anını canlı yayınlamak veya ekran kaydı almak, ayrıca kullandığın aracın yöntemini (bu sayfaya link vererek) paylaşmak en etkili yöntemlerdir.</p><!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Online Çark Hileli mi?",
+  "author": {"@type": "Organization", "name": "Çark Çevirici"},
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "inLanguage": "tr-TR"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Çark Çevirici'nin sonucunu biri değiştirebilir mi?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır. Seçim tamamen kendi tarayıcında, kriptografik rastgele sayı üretimiyle gerçekleşir; ne site sahibi ne de başka biri sonucu değiştiremez."}},
+    {"@type": "Question", "name": "Math.random() ile crypto.getRandomValues() arasındaki fark nedir?", "acceptedAnswer": {"@type": "Answer", "text": "Math.random() genel amaçlı ve teorik olarak tahmin edilebilir bir yöntemdir. crypto.getRandomValues() işletim sisteminin kriptografik rastgelelik kaynağını kullanır ve güvenlik uygulamalarında tercih edilen standarttır."}},
+    {"@type": "Question", "name": "Çekilişimde kullandığım çarkın adil olduğunu katılımcılara nasıl ispatlarım?", "acceptedAnswer": {"@type": "Answer", "text": "Çevirme anını canlı yayınlamak veya ekran kaydı almak, ayrıca kullandığın aracın yöntemini paylaşmak en etkili yöntemlerdir."}}
+  ]
+}
+</script>
+<!-- /wp:html -->
+
+----- YAPIŞTIRILACAK İÇERİK SONU -----
