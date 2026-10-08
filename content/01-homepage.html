@@ -1,0 +1,540 @@
+<!-- ============================================================
+  ÇARK ÇEVİRİCİ — ANA SAYFA (/)
+  ============================================================
+  WP admin'de nasıl yayınlanır:
+  1) Sayfalar → Yeni Ekle
+  2) Sayfa başlığı (Title) alanına şunu yaz:
+       Çark Çevir – Online Çark Çevirme
+     (Bu, Kadence temasının otomatik bastığı tek H1'dir; içerikte
+     ayrıca H1 YOK — SEO başlığı Rank Math'te ayrıca ayarlanacak.)
+  3) Sağ üstteki ⋮ (üç nokta) menüsünden "Kod düzenleyici" (Code editor)
+     seç, aşağıdaki "YAPIŞTIRILACAK İÇERİK" bölümünün TAMAMINI kopyala
+     ve oraya yapıştır, sonra tekrar ⋮ → "Görsel düzenleyici"ye dön.
+  4) Sayfa Nitelikleri → Şablon: "Varsayılan" (ya da Kadence'in
+     "İçerik Genişliği: Full Width/Boşluksuz" seçeneği varsa onu seç,
+     çünkü içerik kendi grid/columns bloklarıyla genişliğini yönetiyor).
+  5) Ayarlar (sağ panel) → bu sayfayı "Ön Sayfa" (Settings → Reading →
+     Your homepage displays → A static page → Homepage) olarak ata.
+  6) Taslak olarak kaydet, yayınlama onayını bekle.
+
+  RANK MATH SEO KUTUSUNA (ayrıca, bu sayfa için):
+    SEO Başlık: Çark Çevir – Ücretsiz Online Çark Çevirme | Çark Çevirici
+    Meta Açıklama: İsimleri ekle, çarkı çevir ve sonucu anında gör.
+      Çekiliş, kura, karar verme ve sınıf etkinlikleri için ücretsiz
+      online çark çevirme aracı.
+    Odak anahtar kelime: çark çevir
+
+  NOT: Aşağıdaki içerikteki bazı bağlantılar (/hazir-carklar/..., diğer
+  araç sayfaları) henüz oluşturulmadı — sırayla oluşturulacak. Sayfa
+  taslak kaldığı sürece bu sorun değil.
+============================================================ -->
+
+----- YAPIŞTIRILACAK İÇERİK BAŞLANGICI -----
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"1.25rem","lineHeight":"1.6"}}} -->
+<p style="font-size:1.25rem;line-height:1.6">Çark Çevirici, seçeneklerini yazıp saniyeler içinde rastgele birini seçmeni sağlayan ücretsiz bir online çark çevirme aracıdır. İsim seçmek, kura çekmek, karar vermek ya da çekiliş yapmak için seçenekleri aşağıdaki kutuya yaz, çarkı çevir ve sonucu anında gör — kayıt gerekmez, girdiğin hiçbir veri sunucuda saklanmaz.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:shortcode -->
+[cark preset="anasayfa"]
+<!-- /wp:shortcode -->
+
+<!-- wp:spacer {"height":"2rem"} -->
+<div style="height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:heading -->
+<h2 id="nasil-yapilir">Çark Çevirme Nasıl Yapılır?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list">
+<!-- wp:list-item -->
+<li><strong>Seçenekleri ekle:</strong> Sağdaki kutuya her satıra bir seçenek yaz, ya da Excel/Google Sheets'ten kopyala-yapıştır.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Ayarları seç (opsiyonel):</strong> Kazananı otomatik kaldırmak, ağırlık eklemek veya renk temasını değiştirmek için "Ayarlar"ı aç.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Çarkı çevir:</strong> "ÇEVİR" butonuna bas, çarka tıkla veya klavyede boşluk tuşuna bas.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Sonucu gör:</strong> Kazanan büyük puntoyla ekranda belirir; dilersen kazananı listeden çıkarıp tekrar çevirebilirsin.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Paylaş veya kaydet:</strong> Çarkını bağlantıyla paylaş, kendi sitene göm ya da "Çarklarım"a kaydederek daha sonra kullan.</li>
+<!-- /wp:list-item -->
+</ol>
+<!-- /wp:list -->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"2.5rem","bottom":"2.5rem","left":"1.5rem","right":"1.5rem"}},"color":{"background":"#f6f7fb"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="background-color:#f6f7fb;padding-top:2.5rem;padding-right:1.5rem;padding-bottom:2.5rem;padding-left:1.5rem">
+
+<!-- wp:heading -->
+<h2 id="ozellikler">Çark Çevirici'nin Özellikleri</h2>
+<!-- /wp:heading -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns">
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3>Ağırlıklı Seçenekler</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>"Ahmet*3" gibi yazarak bazı seçeneklerin çıkma ihtimalini artırabilirsin.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3>Kazananı Kaldır</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Her çevirişte bir öncekini otomatik çıkarır, sırayla herkese fırsat verir.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3>Tam Ekran Modu</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Akıllı tahtada, projeksiyonda veya yayında büyük ekranda kullanmak için idealdir.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns">
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3>Ses ve Konfeti</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Her dönüşte tık sesi, kazananda konfeti efekti; dilersen tek tuşla sessize alabilirsin.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3>Karanlık Mod</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Göz yormayan koyu tema ile akşam veya gece de rahatça kullan.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3>Sitene Ekle</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Tek satır kodla çarkı kendi sitene, blog yazına veya sınıf sayfana gömebilirsin.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 id="kullanim-alanlari">Çark Çevirmeyi Nerelerde Kullanabilirsin?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list">
+<!-- wp:list-item -->
+<li><strong>Sınıfta:</strong> Öğretmenler, söz sırası veya cevap verecek öğrenciyi adil şekilde seçmek için kullanır.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Çekilişlerde:</strong> Instagram, YouTube veya TikTok'ta yaptığın hediye çekilişlerinin kazananını şeffaf şekilde belirle.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Arkadaş gruplarında:</strong> "Bu akşam ne yesek", "nereye gitsek" gibi kararsızlıkları eğlenceli şekilde çöz.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Ofiste:</strong> Toplantı sırası, görev dağılımı veya takım kurma gibi işleri hızlıca ve adil şekilde yap.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Yayınlarda:</strong> Streamer'lar ve YouTuber'lar izleyici etkileşimi ve ödül çekilişleri için kullanır.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Ailede:</strong> Tatil planı, film seçimi gibi aile içi küçük kararları çarkla eğlenceli hale getir.</li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 id="hazir-carklar">Hazır Çarklar</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Sıfırdan liste hazırlamak istemiyorsan, konusuna göre hazırlanmış çarklardan birini aç ve direkt çevirmeye başla.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons">
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/hazir-carklar/super-lig-takimlari/">Süper Lig Takımları</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/hazir-carklar/turkiye-illeri/">Türkiye İlleri</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/hazir-carklar/turk-yemekleri/">Türk Yemekleri</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/hazir-carklar/burclar/">Burçlar</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/hazir-carklar/carpim-tablosu/">Çarpım Tablosu</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/hazir-carklar/dogruluk-sorulari/">Doğruluk Soruları</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/hazir-carklar/hafta-sonu-aktiviteleri/">Hafta Sonu Aktiviteleri</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/hazir-carklar/ulkeler/">Ülkeler</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/hazir-carklar/hayvanlar/">Hayvanlar</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/hazir-carklar/meslekler/">Meslekler</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/hazir-carklar/tatlilar/">Tatlılar</a></div>
+<!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} -->
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/hazir-carklar/ne-izlesem/">Ne İzlesem</a></div>
+<!-- /wp:button -->
+</div>
+<!-- /wp:buttons -->
+
+<!-- wp:paragraph -->
+<p><a href="/hazir-carklar/">Tüm hazır çarkları keşfet →</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 id="diger-araclar">Diğer Rastgele Seçim Araçları</h2>
+<!-- /wp:heading -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns">
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/isim-carki/">İsim Çarkı</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Sınıftan veya listeden rastgele bir isim seç.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/kura-cekme/">Kura Çekme</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Birden fazla kazanan ve yedek belirleyerek adil kura çek.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/cekilis-carki/">Çekiliş Çarkı</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Instagram veya YouTube çekilişini şeffaf şekilde sonuçlandır.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/takim-olusturucu/">Takım Oluşturucu</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Kalabalık bir grubu dengeli takımlara ayır.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns">
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/karar-carki/">Karar Çarkı</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Kararsız kaldığında seçenekleri çarka yaz, çevir.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/evet-hayir-carki/">Evet Hayır Çarkı</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Evet mi hayır mı kararsızlığını saniyede çöz.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/sayi-carki/">Sayı Çarkı</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Tombala, bingo veya sınıf etkinlikleri için rastgele sayı seç.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/harf-carki/">Harf Çarkı</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>İsim Şehir Hayvan ve kelime oyunları için rastgele harf seç.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns">
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/carkifelek/">Çarkıfelek</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Parti ve etkinlikler için kendi çarkıfeleğini oluştur.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/yemek-carki/">Ne Yesem Çarkı</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Bugün ne yesem kararsızlığına son ver.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/dogruluk-mu-cesaret-mi-carki/">Doğruluk mu Cesaret mi</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Arkadaş grubunla eğlenceli bir oyun gecesi yap.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/odul-carki/">Ödül Çarkı</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Mağaza, stant veya etkinliklerde hediye/indirim çarkı kullan.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns">
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/ogrenci-secme-carki/">Öğrenci Seçme Çarkı</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Akıllı tahta için tasarlanmış sınıf çarkı.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/renk-carki/">Renk Çarkı</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Çocuklar için renkli ve eğlenceli bir seçim çarkı.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/yazi-tura/">Yazı Tura</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Klasik yazı tura atışını online yap.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:heading {"level":3} -->
+<h3><a href="/zar-at/">Zar At</a></h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Masa oyunların için online zar at.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem","left":"1.5rem","right":"1.5rem"}},"border":{"radius":"14px"},"color":{"background":"#eef4ff"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-background" style="background-color:#eef4ff;border-radius:14px;padding-top:2rem;padding-right:1.5rem;padding-bottom:2rem;padding-left:1.5rem">
+
+<!-- wp:heading -->
+<h2 id="gercekten-rastgele-mi">Çark Gerçekten Rastgele mi?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Evet. Kazanan, tarayıcının kriptografik rastgele sayı üreticisi (<code>crypto.getRandomValues</code>) ile çark dönmeye <strong>başlamadan önce</strong> belirlenir; animasyon sadece bu sonucu görsel olarak gösterir. Yani çarkı hiç kimse "ayarlayamaz" veya sonucu değiştiremez. Yöntemin tam açıklamasını ve adillik testini <a href="/nasil-calisir/">Nasıl Çalışır sayfasında</a> bulabilirsin.</p>
+<!-- /wp:paragraph -->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:heading -->
+<h2 id="sss">Sıkça Sorulan Sorular</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Çark Çevirici ücretsiz mi?</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Evet, Çark Çevirici'nin tüm araçları tamamen ücretsizdir. Hesap oluşturmana veya ödeme yapmana gerek yoktur; çarkı sınırsız sayıda çevirebilirsin.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Çarka kaç seçenek ekleyebilirim?</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Yüzlerce seçenek ekleyebilirsin. Seçenek sayısı arttıkça dilimler küçülür; en iyi görsel sonuç için 2 ile 100 arası seçenek önerilir.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Telefondan çalışır mı?</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Evet, Çark Çevirici Android ve iOS tarayıcılarında sorunsuz çalışır. Herhangi bir uygulama indirmene gerek yoktur; doğrudan tarayıcıdan kullanabilirsin.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Verilerim kaydediliyor mu?</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Hayır. Girdiğin seçenekler sunucuya gönderilmez; sadece kendi tarayıcında (localStorage) saklanır. Çark Çevirici hesap veya kişisel veri toplamaz.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Çarkımı nasıl paylaşırım?</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Çarkın üstündeki "Paylaş" butonuna tıkla; seçeneklerini içeren bir bağlantı panoya kopyalanır. Bu bağlantıyı açan herkes aynı çarkı görür.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Hileli bir çark var mı?</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Hayır. Kazanan, çark dönmeye başlamadan önce kriptografik rastgele sayı üretimiyle belirlenir; animasyon sonucu etkilemez. Detaylar için <a href="/nasil-calisir/">Nasıl Çalışır</a> sayfasına bakabilirsin.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Sitene nasıl eklerim?</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>"Sitene Ekle" butonuna tıklayarak bir iframe kodu kopyalayabilir, bunu kendi web sitene veya blog yazına yapıştırabilirsin. Detaylı anlatım için <a href="/sitene-ekle/">Sitene Ekle</a> sayfasını ziyaret et.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Kayıt olmam gerekiyor mu?</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Hayır, Çark Çevirici'yi kullanmak için kayıt olmana veya giriş yapmana gerek yoktur. Tüm araçlar herkese açık ve anında kullanılabilir.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Çark Çevirici",
+  "url": "https://carkcevirici.com/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "tr-TR",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "TRY"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Çark Çevirici ücretsiz mi?", "acceptedAnswer": {"@type": "Answer", "text": "Evet, Çark Çevirici'nin tüm araçları tamamen ücretsizdir. Hesap oluşturmana veya ödeme yapmana gerek yoktur; çarkı sınırsız sayıda çevirebilirsin."}},
+    {"@type": "Question", "name": "Çarka kaç seçenek ekleyebilirim?", "acceptedAnswer": {"@type": "Answer", "text": "Yüzlerce seçenek ekleyebilirsin. Seçenek sayısı arttıkça dilimler küçülür; en iyi görsel sonuç için 2 ile 100 arası seçenek önerilir."}},
+    {"@type": "Question", "name": "Telefondan çalışır mı?", "acceptedAnswer": {"@type": "Answer", "text": "Evet, Çark Çevirici Android ve iOS tarayıcılarında sorunsuz çalışır. Herhangi bir uygulama indirmene gerek yoktur; doğrudan tarayıcıdan kullanabilirsin."}},
+    {"@type": "Question", "name": "Verilerim kaydediliyor mu?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır. Girdiğin seçenekler sunucuya gönderilmez; sadece kendi tarayıcında (localStorage) saklanır. Çark Çevirici hesap veya kişisel veri toplamaz."}},
+    {"@type": "Question", "name": "Çarkımı nasıl paylaşırım?", "acceptedAnswer": {"@type": "Answer", "text": "Çarkın üstündeki Paylaş butonuna tıkla; seçeneklerini içeren bir bağlantı panoya kopyalanır. Bu bağlantıyı açan herkes aynı çarkı görür."}},
+    {"@type": "Question", "name": "Hileli bir çark var mı?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır. Kazanan, çark dönmeye başlamadan önce kriptografik rastgele sayı üretimiyle belirlenir; animasyon sonucu etkilemez."}},
+    {"@type": "Question", "name": "Sitene nasıl eklerim?", "acceptedAnswer": {"@type": "Answer", "text": "Sitene Ekle butonuna tıklayarak bir iframe kodu kopyalayabilir, bunu kendi web sitene veya blog yazına yapıştırabilirsin."}},
+    {"@type": "Question", "name": "Kayıt olmam gerekiyor mu?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır, Çark Çevirici'yi kullanmak için kayıt olmana veya giriş yapmana gerek yoktur. Tüm araçlar herkese açık ve anında kullanılabilir."}}
+  ]
+}
+</script>
+<!-- /wp:html -->
+
+----- YAPIŞTIRILACAK İÇERİK SONU -----
