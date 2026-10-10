@@ -79,6 +79,9 @@ class Cark_Assets {
 			'copied'        => __( 'Kopyalandı', 'carkcevirici-tools' ),
 			'shareCopied'   => __( 'Paylaşım bağlantısı kopyalandı', 'carkcevirici-tools' ),
 			'embedCopied'   => __( 'Ekleme kodu kopyalandı', 'carkcevirici-tools' ),
+			'copyWinner'    => __( 'Kopyala', 'carkcevirici-tools' ),
+			'confirmClearHistory' => __( 'Kazananlar geçmişini ve istatistikleri temizlemek istediğine emin misin?', 'carkcevirici-tools' ),
+			'historyCleared' => __( 'Geçmiş temizlendi', 'carkcevirici-tools' ),
 		);
 	}
 }

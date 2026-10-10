@@ -3,7 +3,7 @@
  * Plugin Name:       Çark Çevirici Araçları
  * Plugin URI:        https://carkcevirici.com/
  * Description:       Çark Çevirici'nin özel çark ve rastgele seçim araçları (vanilla JS, harici kütüphane yok).
- * Version:           1.1.0
+ * Version:           1.2.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Çark Çevirici
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'CARK_VERSION', '1.1.0' );
+define( 'CARK_VERSION', '1.2.0' );
 define( 'CARK_PLUGIN_FILE', __FILE__ );
 define( 'CARK_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CARK_PLUGIN_URL', plugin_dir_url( __FILE__ ) );

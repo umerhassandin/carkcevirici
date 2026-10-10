@@ -4,7 +4,7 @@ Tags: wheel, spinner, random, draw, turkish
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,15 @@ Tüm JavaScript vanilla ES2020'dir; jQuery, React veya harici CDN kullanılmaz. 
 4. Bir sayfaya `[cark preset="anasayfa"]` kısa kodunu ekle ya da Çark bloğunu kullan.
 
 == Changelog ==
+
+= 1.2.0 =
+* Fixed: the winner popup rendered with broken/unreadable colors (showed up as a "blue screen" for some users) because it was appended outside the `.cark-wheel` element and lost access to its CSS theming variables. Fixed by carrying the active theme's resolved colors onto the popup.
+* Added: win-tally statistics panel -- shows how many times each entry has won, with a percentage bar per entry, plus a one-line summary ("12 çeviriş · en çok kazanan: Ahmet (5 kez)").
+* Added: winners history now persists in the browser across page reloads (previously reset on every visit).
+* Added: "Geçmişi Temizle" (clear history) button.
+* Added: "Kopyala" button on the winner popup to copy the winner's name directly.
+* Added: short vibration feedback on mobile devices when a winner is announced.
+* The downloaded `.txt` history file now includes the win-tally summary and a timestamp per entry.
 
 = 1.1.0 =
 * `[iletisim_formu]` kısa kodu eklendi: honeypot korumalı, e-posta ile iletişim formu (harici form eklentisi gerektirmez).

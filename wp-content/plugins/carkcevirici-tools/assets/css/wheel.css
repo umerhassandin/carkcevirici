@@ -153,7 +153,16 @@
 
 /* History */
 .cark-history { margin-top: 1.25rem; border-top: 1px dashed var(--cark-border); padding-top: 1rem; }
-.cark-history-list { padding-left: 1.2rem; }
+.cark-history h3 { margin: 1rem 0 .5rem; }
+.cark-history h3:first-child { margin-top: 0; }
+.cark-history-summary { margin: 0 0 .75rem; color: var(--cark-muted); font-size: .9rem; }
+.cark-history-list { padding-left: 1.2rem; font-size: .9rem; color: var(--cark-muted); }
+
+.cark-history-tally { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+.cark-tally-row { display: flex; flex-direction: column; gap: .3rem; }
+.cark-tally-label { font-size: .88rem; font-weight: 600; }
+.cark-tally-bar-wrap { width: 100%; height: 8px; border-radius: 999px; background: var(--cark-border); overflow: hidden; }
+.cark-tally-bar { height: 100%; border-radius: inherit; background: var(--cark-accent); transition: width .4s ease; }
 
 /* SSR fallback list */
 .cark-ssr-list { margin-top: 1.25rem; }

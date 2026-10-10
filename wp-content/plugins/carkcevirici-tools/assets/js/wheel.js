@@ -241,6 +241,8 @@
 		this.applySettingsToUi();
 		this.resizeCanvas();
 		this.draw();
+		this.loadHistory();
+		this.renderHistory();
 
 		window.addEventListener( 'resize', this.debounce( this.onResize.bind( this ), 150 ) );
 	}
@@ -278,6 +280,8 @@
 		this.settingsPanel = q( '.cark-settings-panel' );
 		this.historyPanel = q( '.cark-history' );
 		this.historyList = q( '.cark-history-list' );
+		this.historyTally = q( '.cark-history-tally' );
+		this.historySummary = q( '.cark-history-summary' );
 		this.importFile = q( '.cark-import-file' );
 
 		this.setDuration = q( '.cark-set-duration' );
@@ -436,6 +440,14 @@
 				break;
 			case 'download-history':
 				this.downloadHistory();
+				break;
+			case 'clear-history':
+				if ( window.confirm( T( 'confirmClearHistory', 'Kazananlar geçmişini ve istatistikleri temizlemek istediğine emin misin?' ) ) ) {
+					this.clearHistory();
+				}
+				break;
+			case 'modal-copy-winner':
+				this.copyToClipboard( this.lastWinnerNames.join( ', ' ), T( 'copied', 'Kopyalandı' ) );
 				break;
 			case 'modal-close':
 				this.hideModal();
@@ -755,12 +767,19 @@
 		}
 
 		this.lastWinnerIndexes = [ winnerIndex ].concat( additionalWinnerIndexes );
+		this.lastWinnerNames = names;
 
 		var self = this;
 		names.forEach( function ( name ) {
-			self.history.unshift( { text: name, at: new Date() } );
+			self.history.unshift( { text: name, at: new Date().toISOString() } );
 		} );
+		this.history = this.history.slice( 0, 500 );
+		this.saveHistory();
 		this.renderHistory();
+
+		if ( window.navigator && window.navigator.vibrate ) {
+			window.navigator.vibrate( 120 );
+		}
 
 		this.showModal( names );
 
@@ -788,11 +807,30 @@
 
 	/* ---------------- Winner modal ---------------- */
 
+	CarkWheel.prototype.THEME_VARS = [
+		'--cark-accent', '--cark-accent-ink', '--cark-bg', '--cark-panel-bg',
+		'--cark-ink', '--cark-muted', '--cark-border', '--cark-radius'
+	];
+
 	CarkWheel.prototype.showModal = function ( names ) {
 		this.hideModal();
 
 		var backdrop = document.createElement( 'div' );
 		backdrop.className = 'cark-modal-backdrop';
+
+		// The modal is appended to <body> (so it can truly overlay the whole
+		// viewport), which means it sits OUTSIDE .cark-wheel in the DOM tree
+		// and never inherits the --cark-* custom properties defined there --
+		// that was the bug behind the broken/unreadable popup colors. Copy
+		// this instance's *resolved* values (which already reflect dark mode)
+		// onto the backdrop so they cascade normally to everything inside it.
+		var rootStyles = window.getComputedStyle( this.root );
+		this.THEME_VARS.forEach( function ( name ) {
+			var value = rootStyles.getPropertyValue( name );
+			if ( value ) {
+				backdrop.style.setProperty( name, value.trim() );
+			}
+		} );
 
 		var modal = document.createElement( 'div' );
 		modal.className = 'cark-modal';
@@ -826,6 +864,12 @@
 		remove.setAttribute( 'data-action', 'modal-remove-winner' );
 		remove.textContent = T( 'removeWinner', 'Kazananı Kaldır' );
 
+		var copyWinner = document.createElement( 'button' );
+		copyWinner.type = 'button';
+		copyWinner.className = 'cark-btn';
+		copyWinner.setAttribute( 'data-action', 'modal-copy-winner' );
+		copyWinner.textContent = T( 'copyWinner', 'Kopyala' );
+
 		var close = document.createElement( 'button' );
 		close.type = 'button';
 		close.className = 'cark-btn';
@@ -834,6 +878,7 @@
 
 		actions.appendChild( again );
 		actions.appendChild( remove );
+		actions.appendChild( copyWinner );
 		actions.appendChild( close );
 
 		modal.appendChild( confettiCanvas );
@@ -875,19 +920,118 @@
 		}
 	};
 
-	/* ---------------- History ---------------- */
+	/* ---------------- History (chronological log + win tally) ---------------- */
+
+	CarkWheel.prototype.historyKey = function () {
+		return 'cark_history_' + this.id;
+	};
+
+	CarkWheel.prototype.loadHistory = function () {
+		var saved = storageGet( this.historyKey(), [] );
+		this.history = Array.isArray( saved ) ? saved : [];
+	};
+
+	CarkWheel.prototype.saveHistory = function () {
+		storageSet( this.historyKey(), this.history );
+	};
+
+	CarkWheel.prototype.clearHistory = function () {
+		this.history = [];
+		this.saveHistory();
+		this.renderHistory();
+		if ( this.live ) {
+			this.live.textContent = T( 'historyCleared', 'Geçmiş temizlendi' );
+		}
+	};
+
+	/**
+	 * Counts how many times each distinct entry text has won, sorted from
+	 * most to least wins -- this is what answers "how many times did A win,
+	 * how many times did B win".
+	 */
+	CarkWheel.prototype.getTally = function () {
+		var counts = {};
+		var order = [];
+		this.history.forEach( function ( item ) {
+			if ( ! Object.prototype.hasOwnProperty.call( counts, item.text ) ) {
+				counts[ item.text ] = 0;
+				order.push( item.text );
+			}
+			counts[ item.text ]++;
+		} );
+		return order
+			.map( function ( text ) {
+				return { text: text, count: counts[ text ] };
+			} )
+			.sort( function ( a, b ) {
+				return b.count - a.count;
+			} );
+	};
+
+	CarkWheel.prototype.formatHistoryTime = function ( isoString ) {
+		try {
+			var d = new Date( isoString );
+			if ( isNaN( d.getTime() ) ) {
+				return '';
+			}
+			return d.toLocaleString( 'tr-TR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' } );
+		} catch ( e ) {
+			return '';
+		}
+	};
 
 	CarkWheel.prototype.renderHistory = function () {
 		if ( ! this.historyList ) {
 			return;
 		}
+
+		if ( ! this.history.length ) {
+			this.historyPanel.setAttribute( 'hidden', '' );
+			return;
+		}
 		this.historyPanel.removeAttribute( 'hidden' );
+
+		// Chronological log.
 		this.historyList.innerHTML = '';
 		this.history.slice( 0, 50 ).forEach( function ( item ) {
 			var li = document.createElement( 'li' );
-			li.textContent = item.text;
+			var time = this.formatHistoryTime( item.at );
+			li.textContent = time ? item.text + ' — ' + time : item.text;
 			this.historyList.appendChild( li );
 		}.bind( this ) );
+
+		// Win tally with percentage bars.
+		if ( this.historyTally ) {
+			var tally = this.getTally();
+			var total = this.history.length;
+			this.historyTally.innerHTML = '';
+			tally.forEach( function ( row ) {
+				var pct = Math.round( ( row.count / total ) * 100 );
+				var li = document.createElement( 'li' );
+				li.className = 'cark-tally-row';
+
+				var labelRow = document.createElement( 'div' );
+				labelRow.className = 'cark-tally-label';
+				labelRow.textContent = row.text + ' — ' + row.count + ' kez (%' + pct + ')';
+
+				var barWrap = document.createElement( 'div' );
+				barWrap.className = 'cark-tally-bar-wrap';
+				var bar = document.createElement( 'div' );
+				bar.className = 'cark-tally-bar';
+				bar.style.width = pct + '%';
+				barWrap.appendChild( bar );
+
+				li.appendChild( labelRow );
+				li.appendChild( barWrap );
+				this.historyTally.appendChild( li );
+			}.bind( this ) );
+		}
+
+		if ( this.historySummary ) {
+			var top = this.getTally()[ 0 ];
+			this.historySummary.textContent = this.history.length + ' çeviriş' +
+				( top ? ' · en çok kazanan: ' + top.text + ' (' + top.count + ' kez)' : '' );
+		}
 	};
 
 	CarkWheel.prototype.copyHistory = function () {
@@ -898,9 +1042,21 @@
 	};
 
 	CarkWheel.prototype.downloadHistory = function () {
-		var text = this.history.map( function ( h ) {
-			return h.text;
-		} ).join( '\n' );
+		var lines = this.history.map( function ( h ) {
+			var time = this.formatHistoryTime( h.at );
+			return time ? h.text + ' - ' + time : h.text;
+		}.bind( this ) );
+
+		var tally = this.getTally();
+		if ( tally.length ) {
+			lines.push( '' );
+			lines.push( '--- Kazanma İstatistikleri ---' );
+			tally.forEach( function ( row ) {
+				lines.push( row.text + ': ' + row.count + ' kez' );
+			} );
+		}
+
+		var text = lines.join( '\n' );
 		var blob = new Blob( [ text ], { type: 'text/plain;charset=utf-8' } );
 		var url = URL.createObjectURL( blob );
 		var a = document.createElement( 'a' );

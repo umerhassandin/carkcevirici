@@ -188,11 +188,16 @@ class Cark_Shortcodes {
 			</div>
 
 			<div class="cark-history" hidden>
+				<h3><?php esc_html_e( 'Kazanma İstatistikleri', 'carkcevirici-tools' ); ?></h3>
+				<p class="cark-history-summary"></p>
+				<ul class="cark-history-tally"></ul>
+
 				<h3><?php esc_html_e( 'Kazananlar Geçmişi', 'carkcevirici-tools' ); ?></h3>
 				<ol class="cark-history-list"></ol>
 				<div class="cark-entry-actions">
 					<button type="button" class="cark-btn cark-btn-sm" data-action="copy-history"><?php esc_html_e( 'Kopyala', 'carkcevirici-tools' ); ?></button>
 					<button type="button" class="cark-btn cark-btn-sm" data-action="download-history"><?php esc_html_e( '.txt indir', 'carkcevirici-tools' ); ?></button>
+					<button type="button" class="cark-btn cark-btn-sm" data-action="clear-history"><?php esc_html_e( 'Geçmişi Temizle', 'carkcevirici-tools' ); ?></button>
 				</div>
 			</div>
 
